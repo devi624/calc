@@ -9,7 +9,7 @@ $error  = null;
 function e(string $text): string {
     return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
-
+// Funkcia pro výpočet výsledku
 function calculate(float $a, float $b, string $op, ?string &$error): ?float {
     if ($op === '+') return $a + $b;
     if ($op === '-') return $a - $b;
@@ -26,7 +26,7 @@ function calculate(float $a, float $b, string $op, ?string &$error): ?float {
     $error = 'Neznáma operácia.';
     return null;
 }
-
+// Spracovanie formulára
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $first  = $_POST['a'] ?? '';
     $second = $_POST['b'] ?? '';
